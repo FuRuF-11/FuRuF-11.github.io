@@ -1,7 +1,7 @@
 # Site settings
 title: F.R
 baseurl: "/fr"
-url:"https://FuRuF-11.github.io"
+url: "https://FuRuF-11.github.io"
 # url: "https://kssim.github.io"
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
 
@@ -47,9 +47,23 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Gems
+
+# gems:
+  
 plugins:
+  - jekyll-commonmark-ghpages
+  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-paginate
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      retry: true
+# Gems
+# plugins:
+  
 
 # Permalinks
 permalink: /:year-:month-:day/:title
