@@ -22,8 +22,8 @@ title: FR
 email: furuf15@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is furao`s personal website.
-baseurl: "/site_bay1" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/FuRuF-11.github.io" # the subpath of your site, e.g. /blog
+url: "https://FuRuF-11.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 og_image: /assets/img/profile-pic.jpg
 # google_analytics: "UA-121636368-3"
@@ -31,7 +31,7 @@ github_username: furuf-11
 
 # Build settings
 # theme: minima
-theme: bay_jekyll_theme
+# theme: bay_jekyll_theme
 header:
   pages:
     - name: Home
@@ -89,12 +89,6 @@ exclude:
 
 # Used for defeating caching
 version: 1
-
-
-
-
-
-
 
 # Exclude from processing.
 # The following items will not be processed, by default.
