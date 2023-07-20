@@ -29,6 +29,7 @@ og_image: /assets/img/profile-pic.jpg
 # google_analytics: "UA-121636368-3"
 github_username: furuf-11
 
+remote_theme: eliottvincent/bay
 # Build settings
 # theme: minima
 # theme: bay_jekyll_theme
