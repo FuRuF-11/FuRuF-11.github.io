@@ -23,7 +23,7 @@ email: furuf15@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is furao`s personal website.
 baseurl: "" # the subpath of your site,/FuRuF-11.github.io
-url: "" # https://FuRuF-11.github.io
+url: "https://FuRuF-11.github.io" # https://FuRuF-11.github.io
 # twitter_username: jekyllrb
 og_image: /assets/img/profile-pic.jpg
 # google_analytics: "UA-121636368-3"
@@ -36,6 +36,7 @@ remote_theme: eliottvincent/bay
 header:
   pages:
     - name: Home
+      slug: /
     - name: Blog
     - name: Work
 
