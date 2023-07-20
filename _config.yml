@@ -22,7 +22,7 @@ title: FR
 email: furuf15@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is furao`s personal website.
-baseurl: "/FuRuF-11.github.io" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site,/FuRuF-11.github.io
 url: "" # https://FuRuF-11.github.io
 # twitter_username: jekyllrb
 og_image: /assets/img/profile-pic.jpg
