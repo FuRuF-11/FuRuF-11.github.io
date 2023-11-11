@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "thinking-abort-generalization"
+title:  "Thinking Abort Generalization"
 date:  2023-9-07 
 blurb: "关于泛化的一些思考"
 ---
