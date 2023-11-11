@@ -43,35 +43,34 @@ $r_2$  & $O_{2,1}$ & $O_{2,2}$ & $O_{2,}$\\
 $C_{\text{all}}$ & $O_{,1}$ & $O_{,2}$ & $N$\\ 
 \hline -->
 
-
-
-<table>
-    <tr>
-        <td></td>
-        <td>$c_1$</td>
-        <td>$c_2$</td>
-        <td>$R_{all}$</td>
-    </tr>
-    <tr>
-        <td>$r_1$</td>
-        <td>$O_{1,1}$</td>
-        <td>$O_{1,2}$</td>
-        <td>$O_{1,}$</td>
-    </tr>
-    <tr>
-        <td>$r_2$</td>
-        <td>$O_{2,1}$</td>
-        <td>$O_{2,2}$</td>
-        <td>$O_{2,}$</td>
-    </tr>
-    <tr>
-        <td>$C_{all}$</td>
-        <td>$O_{,1}$</td>
-        <td>$O_{,2}$</td>
-        <td>N</td>
-    </tr>
-</table>
-
+<div style="text-align: center;">
+    <table>
+        <tr>
+            <td></td>
+            <td>$c_1$</td>
+            <td>$c_2$</td>
+            <td>$R_{all}$</td>
+        </tr>
+        <tr>
+            <td>$r_1$</td>
+            <td>$O_{1,1}$</td>
+            <td>$O_{1,2}$</td>
+            <td>$O_{1,}$</td>
+        </tr>
+        <tr>
+            <td>$r_2$</td>
+            <td>$O_{2,1}$</td>
+            <td>$O_{2,2}$</td>
+            <td>$O_{2,}$</td>
+        </tr>
+        <tr>
+            <td>$C_{all}$</td>
+            <td>$O_{,1}$</td>
+            <td>$O_{,2}$</td>
+            <td>N</td>
+        </tr>
+    </table>
+</div>
 
 此时的卡方统计量公式为：
 
