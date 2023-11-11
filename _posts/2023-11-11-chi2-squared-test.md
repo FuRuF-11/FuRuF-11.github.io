@@ -35,15 +35,43 @@ $$
 
 第二种情况则需要我们建立一个列联表，假设A有R种取值，B有C种取值，总共有N个样本。那么我们可以j一个如下的2x2列联表来举例：
 
-\begin{tabular}{|c|c|c|c|}
-\hline
+<!-- \hline
 ~      & $c_1$   & $c_2$   & $R_{\text{all}}$ \\ 
 \hline
 $r_1$  & $O_{1,1}$ & $O_{1,2}$ & $O_{1,}$\\ 
 $r_2$  & $O_{2,1}$ & $O_{2,2}$ & $O_{2,}$\\ 
 $C_{\text{all}}$ & $O_{,1}$ & $O_{,2}$ & $N$\\ 
-\hline
-\end{tabular}
+\hline -->
+
+
+
+<table>
+    <tr>
+        <td></td>
+        <td>$c_1$</td>
+        <td>$c_2$</td>
+        <td>$R_{all}$</td>
+    </tr>
+    <tr>
+        <td>$r_1$</td>
+        <td>$O_{1,1}$</td>
+        <td>$O_{1,2}$</td>
+        <td>$O_{1,}$</td>
+    </tr>
+    <tr>
+        <td>$r_2$</td>
+        <td>$O_{2,1}$</td>
+        <td>$O_{2,2}$</td>
+        <td>$O_{2,}$</td>
+    </tr>
+    <tr>
+        <td>$C_{all}$</td>
+        <td>$O_{,1}$</td>
+        <td>$O_{,2}$</td>
+        <td>N</td>
+    </tr>
+</table>
+
 
 此时的卡方统计量公式为：
 
