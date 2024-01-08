@@ -11,7 +11,7 @@ blurb: "柯罗格廖夫与所罗门诺夫与压缩与预测"
 
 对于前两者，所有对AI有所学习有所了解的人都不会陌生，但是对于雷·所罗门诺夫（以下简称所罗门），大部分人却闻所未闻。这其实是由于所罗门一生的研究领域，看起来实在是太过抽象、太过偏门且**似乎不像同会议其他人的成果那么有用**导致的。尽管所罗门本人是人类历史上首位使用概率论进行机器学习研究的学者，但是他的主要成就是一门名叫算法信息理论（Algorithmic Information Theory）的古怪学科和关于一般化归纳推理的理论（General Theory of Inductive Inference）。
 
-但实际上，这位不为人知的雷·所罗门诺夫所提出的理论，正是为如今最伟大的一群AI研究者们（基本上来自OpenAI和DeepMind，如Ilya Sutskever、Wojciech Zaremba、等）指明了研究方向伟大理论。换句话说，他的提出了从数学上可以证明的，**AGI的实现理论**。
+但实际上，这位不为人知的雷·所罗门诺夫所提出的理论，正是为如今最伟大的一群AI研究者们（如[Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever)、[Wojciech Zaremba](https://en.wikipedia.org/wiki/Wojciech_Zaremba)、[Marcus Hutter](https://en.wikipedia.org/wiki/Marcus_Hutter)等，基本上来自OpenAI和DeepMind）指明了研究方向的伟大理论。换句话说，一些世界上最顶尖的脑袋真心认为，所罗门的理论，是从数学上可以证明的，**可以被用于实现AGI理论**。
 
 
 Referring:  
