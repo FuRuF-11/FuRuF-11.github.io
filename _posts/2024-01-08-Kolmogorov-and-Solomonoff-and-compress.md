@@ -13,7 +13,9 @@ blurb: "柯罗格廖夫与所罗门诺夫与压缩与预测"
 
 但实际上，这位不为人知的雷·所罗门诺夫所提出的算法概率理论，正是为如今最伟大的一群AI研究者们（如[Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever)、[Wojciech Zaremba](https://en.wikipedia.org/wiki/Wojciech_Zaremba)、[Marcus Hutter](https://en.wikipedia.org/wiki/Marcus_Hutter)等，基本上来自OpenAI和DeepMind）指明了研究方向的伟大理论。换句话说，一些世界上最顶尖的脑袋真心认为，所罗门的理论，是从数学上可以证明的，**可以被用于实现AGI理论**。
 
-所罗门的算法概率理论，其实可以视作一种奥卡姆剃刀和多重解释原理的数学化证明。  
+算法概率是所罗门诺夫归纳推理理论的主要成分，它的发明目的是将其用于一类机器学习问题：给定一系列符号，预测下一个会是哪一个。
+
+在所罗门的算法概率理论，奥卡姆剃刀和多重解释原理占据了相当重要的部分。  
 1. 奥卡姆剃刀：如无必要，勿增实体。
 2. 伊壁鸠鲁的多重解释原理：如果不止一个理论与观察结果一致，则保留所有此类理论。
 
