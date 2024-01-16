@@ -36,5 +36,13 @@ blurb: "所罗门诺夫、柯尔莫哥洛夫和莱文与压缩、预测和搜索
 
 采用所罗门诺夫的理论作为一般性假设的最美妙的地方就在于，他解释了神经网络为何会有如此强的泛化性能。因为按照理论，最小化loss的过程，可以看作搜索柯氏复杂度最小程序的过程，而柯氏复杂度最小的程序是唯一的，且一定是泛化性能最好的。
 
+令人遗憾的是，雷·所罗门诺夫，这位伟大的思想家、AI领域的先驱，已经于2009年永远的离开了我们。但是我可以确定，他深邃而超前的思维将伴随着我们，直到我们捧起AGI的圣杯。R.I.P. 
+
 Referring:  
-[所罗门诺夫的个人网站](https://raysolomonoff.com/)，令人遗憾的是，这位伟大的思想家、AI领域的先驱，已经于2009年永远的离开了我们。AGI的名字中一定会有你的部分，RIP。
+[所罗门诺夫的个人网站](https://raysolomonoff.com/)   
+[所罗门诺夫的归纳推理理论](https://en.wikipedia.org/wiki/Solomonoff%27s_theory_of_inductive_inference)  
+[算法概率](https://en.wikipedia.org/wiki/Algorithmic_probability#Overview)  
+[柯尔莫哥洛夫复杂度](https://en.wikipedia.org/wiki/Kolmogorov_complexity)  
+[译作——老师柯尔莫哥洛夫的生平和工作（9）：1960年代之算法信息论，算法概率论，柯尔莫哥洛夫复杂度（Kolmogorov complexity）](https://zhuanlan.zhihu.com/p/425376986)  
+[莱文通用搜索](https://steemit.com/steemstem/@markgritter/leonid-levin-s-universal-algorithm)  
+[通用搜索](http://www.scholarpedia.org/article/Universal_search)
