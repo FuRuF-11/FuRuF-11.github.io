@@ -6,13 +6,15 @@ blurb: "所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索
 ---
 ## 所罗门的遗产
 
-将时间调回到1956年的达特茅斯的夏天的末尾，来自于各方的学术巨擘们刚刚结束了为期一个月（会议自8月31日开始）的对于人工智能的讨论，他们当中的大部分都已经离开。
+将时间调回到1956年的达特茅斯的夏天的末尾，来自于各方的学术巨擘们刚刚结束了为期一个月（会议自8月31日开始）的对于人工智能的讨论，他们当中的大部分都已经离开。但是，有三个人留了下来（实际上，这三个人一整个夏天都呆在那里进行讨论）。这三个人分别是[马文·明斯基](https://zh.wikipedia.org/wiki/马文·闵斯基)、[约翰·麦卡锡](https://zh.wikipedia.org/wiki/约翰·麦卡锡)还有[雷·所罗门诺夫](https://en.wikipedia.org/wiki/Ray_Solomonoff)。
 
-但是，有三个人留了下来（实际上，这三个人一整个夏天都呆在那里进行讨论）。这三个人分别是[马文·明斯基](https://zh.wikipedia.org/wiki/马文·闵斯基)、[约翰·麦卡锡](https://zh.wikipedia.org/wiki/约翰·麦卡锡)还有[雷·所罗门诺夫](https://en.wikipedia.org/wiki/Ray_Solomonoff)。
+三人花费了一整个夏天的时间来争论AI未来的道路，但是最后他们并没能达成一致。前两人去往MIT成立了著名的人工智能实验室，领导了未来数十年AI发展的潮流。
 
-对于前两者，所有对AI有所学习有所了解的人都不会陌生，但是对于雷·所罗门诺夫（以下简称所罗门），大部分人却闻所未闻。这其实是由于所罗门一生的研究领域，看起来实在是太过抽象、太过偏门且**似乎不像同会议其他人的成果那么有用**。尽管所罗门本人是人类历史上首位使用概率论进行机器学习研究的学者，但是他的主要成就是一门名叫算法概率（Algorithmic probability）——后被发展为算法信息理论（Algorithmic Information Theory）——的古怪学科和关于通用归纳推理的数学理论（General Theory of Inductive Inference）。
+但是对于参与讨论的第三人雷·所罗门诺夫（以下简称所罗门），大部分人却闻所未闻。这其实是由于所罗门一生的研究领域，看起来实在是太过抽象、太过偏门且**似乎不像同会议其他人的成果那么有用**。尽管所罗门本人是人类历史上**首位**使用概率论进行机器学习研究的学者，但是他的主要成就是一门名叫算法概率（Algorithmic probability）——后被发展为算法信息理论（Algorithmic Information Theory）——的古怪学科和关于通用归纳推理的数学理论（General Theory of Inductive Inference）。并且所罗门本人相当清贫，一生未曾荣华富贵。
 
-但实际上，这位不为人知的雷·所罗门诺夫所提出的理论，正是为如今最伟大的一群AI研究者们（如[Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever)、[Wojciech Zaremba](https://en.wikipedia.org/wiki/Wojciech_Zaremba)、[Marcus Hutter](https://en.wikipedia.org/wiki/Marcus_Hutter)等）指明了研究方向的伟大理论。换句话说，一些世界上最顶尖的头脑真心认为，所罗门的理论是一种**可以被用于实现AGI的理论**。
+但实际上，这位不为人知的雷·所罗门诺夫所提出的理论，被许多伟大的AI研究者（如[Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever)、[Wojciech Zaremba](https://en.wikipedia.org/wiki/Wojciech_Zaremba)、[Marcus Hutter](https://en.wikipedia.org/wiki/Marcus_Hutter)等）视为帮助其指明了研究方向的伟大理论。晚年的明斯基甚至直接表示所罗门的理论是自哥德尔不完备性定理之后最大的数学突破，所有人都应该致力于研究它。
+
+换句话说，一些世界上最顶尖的头脑真心认为，所罗门的理论是一种**可以被用于实现AGI的伟大理论**。
 
 ## AGI的实现理论
 
