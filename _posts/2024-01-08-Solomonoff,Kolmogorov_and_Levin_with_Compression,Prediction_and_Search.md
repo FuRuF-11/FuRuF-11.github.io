@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Solomonoff,Kolmogorov and Levin with Induction, Compression, and Search"
+title:  "Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search"
 date:  2024-01-08
 blurb: "所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索"
 ---
