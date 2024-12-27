@@ -10,6 +10,6 @@ My research interests are mainly constructed on NLP, reinforcement learning and 
 
 In particular, I am studying the [test-time compute](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute)(AKA, TTC)
 
-And I believe that deep learning is the key to achieve AGI, and AIT will provide real theoretical support for DL. One day, we will use AI to eliminate all ignorance and usher in a golden age for mankind.
+And I believe that DL is the key to achieve AGI, and AIT will provide real theoretical support for DL. One day, we will use AI to eliminate all ignorance and usher in a golden age for mankind.
 
 If you want contact with me, please just send me an e-mail.
