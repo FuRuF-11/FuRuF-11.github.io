@@ -1,0 +1,138 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search | FR </title> <meta name="author" content="Rao Fu"> <meta name="description" content="所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索"> <meta name="keywords" content="NLP, reinforcement learning, algorithmic information theory, deep learning"> <meta property="og:site_name" content="FR"> <meta property="og:type" content="website"> <meta property="og:title" content="FR | Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search"> <meta property="og:url" content="https://furuf-11.github.io/thoughts/2024/Solomonoff-Kolmogorov_and_Levin_with_Compression-Prediction_and_Search/"> <meta property="og:description" content="所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索"> <meta property="og:image" content="https://furuf-11.github.io/assets/img/profile-pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search"> <meta name="twitter:description" content="所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索"> <meta name="twitter:image" content="https://furuf-11.github.io/assets/img/profile-pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.ico?v=4e2b6ea1ed8c844e136bce1163bffde9"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://furuf-11.github.io/thoughts/2024/Solomonoff-Kolmogorov_and_Levin_with_Compression-Prediction_and_Search/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> FR </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/thoughts/">Thought <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Project </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search</h1> <p class="post-meta"> Created on January 08, 2024 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </p> </header> <article class="post-content"> <div id="markdown-content"> <h2 id="所罗门的遗产">所罗门的遗产</h2> <p>将时钟拨回1956年8月的达特茅斯，当时正值夏天的末尾，来自于各方的学术巨擘们刚刚结束了自6月中旬开始的一场对于人工智能的会议。他们当中的大部分都已经离开。但是，有三个人留了下来（实际上，这三个人一整个夏天都呆在那里进行讨论）。这三个人分别是<a href="https://zh.wikipedia.org/wiki/%E9%A9%AC%E6%96%87%C2%B7%E9%97%B5%E6%96%AF%E5%9F%BA" rel="external nofollow noopener" target="_blank">马文·明斯基</a>、<a href="https://zh.wikipedia.org/wiki/%E7%BA%A6%E7%BF%B0%C2%B7%E9%BA%A6%E5%8D%A1%E9%94%A1" rel="external nofollow noopener" target="_blank">约翰·麦卡锡</a>还有为会议做了最后一场报告的<a href="https://en.wikipedia.org/wiki/Ray_Solomonoff" rel="external nofollow noopener" target="_blank">雷·所罗门诺夫</a>。</p> <p>三人花费了一整个夏天的时间来争论AI未来的道路，但是最后他们并没能达成一致。前两人去往MIT成立了著名的人工智能实验室，领导了未来数十年AI发展的潮流。</p> <p>但是对于参与讨论的第三人雷·所罗门诺夫（以下简称所罗门），大部分人却闻所未闻。这其实是由于所罗门一生的研究领域，看起来实在是太过抽象、太过偏门且<strong>似乎不像同会议其他人的成果那么有用</strong>。尽管所罗门诺夫本人是人类历史上<strong>首位</strong>使用概率论进行机器学习研究的学者，但是他的主要成就是一门名叫算法概率（Algorithmic probability）——后被发展为算法信息理论（Algorithmic Information Theory）——的古怪学科和关于形式化归纳推理的数学理论（General Theory of Inductive Inference）。并且所罗门本人相当清贫，一生未曾荣华富贵。</p> <p>但实际上，这位不为人知的雷·所罗门诺夫所提出的理论，被许多伟大的AI研究者（如<a href="https://en.wikipedia.org/wiki/Ilya_Sutskever" rel="external nofollow noopener" target="_blank">Ilya Sutskever</a>、<a href="https://en.wikipedia.org/wiki/Wojciech_Zaremba" rel="external nofollow noopener" target="_blank">Wojciech Zaremba</a>、<a href="https://en.wikipedia.org/wiki/Marcus_Hutter" rel="external nofollow noopener" target="_blank">Marcus Hutter</a>等）视为帮助其指明了研究方向的伟大理论。晚年的明斯基甚至直接表示所罗门的理论是自哥德尔不完备性定理之后最大的数学突破，所有人都应该致力于研究它。</p> <p>换句话说，一些世界上最顶尖AI研究者真心认为，所罗门的理论可能是<strong>实现AGI关键理论</strong>。</p> <h2 id="agi的实现理论">AGI的实现理论</h2> <p>那么，为什么说所罗门的理论是AGI的实现理论？实际上，所罗门身前所研究的理论的正式名称是“<strong>Solomonoff`s Induction Inference(SI，所罗门诺夫归纳推理法)</strong>”。这是一种形式化的归纳推理理论。从更一般的归纳推理理论的角度来看来看，人脑的思维活动、各种基于统计的传统ML算法、人工神经网络（ANN），本质上都是在给定的数据下进行归纳推理。而我们可以证明，许多的归纳推理方法实际上是SI的一个特例（虽然SI本质上是不可计算的）。并且我们有理由相信，人脑和ANN实际上也属于这些特例。比较SI和人脑，我们可以许多相同之处：</p> <ol> <li>在面对不同的问题时，人脑和SI实际上都对简单的回答更偏好（这被称为奥卡姆剃刀原则）。</li> <li>人脑在进行推理时和SI一样都会保留对一件事情的多种解释（多重选择原理）。</li> <li>人脑、ANN、SI实际上都在进行程序搜索。</li> </ol> <p>下面详细描述SI的具体内容和其与AGI理论的关系。</p> <h2 id="柯尔莫哥洛夫复杂度与通用先验">柯尔莫哥洛夫复杂度与通用先验</h2> <p>如果要使用归纳推理，那么我们必须使用贝叶斯律。但是根据贝叶斯公式：</p> \[P(x|y)=\frac{P(xy)}{P(y)}=\frac{P(x)P(y|x)}{P(y)}\] <p>我们必须知道$P(x)$，也即我们的先验概率。一般的，我们需要对这个概率进行假设，然后才能进行推理。</p> <p>在1956年的达特茅斯会议上，麦卡锡和所罗门将所有归纳推理问题总结为一个字符串外推问题，即给定一系列符号，预测下一个会是哪一个（也即自回归生成范式）。所罗门从这个问题出发，给出了基于奥卡姆剃刀原理的一种先验概率。</p> \[M(x)=2^{-K(\mu())}\] <p>其中，$\mu()$是指一个可以产生y的程序，$K()$指柯尔莫哥洛夫复杂度。</p> <p>考虑所有可能产生y的程序则有 \(M(x)=\sum_{\mu \in U}2^{-K(\mu)}\mu(x)\)</p> <p>其中U是所有可能的可计算假设，或者说所有可以产生y的程序$\mu$的集合。</p> <p>这里使用$M()$，而不使用$P()$，是因为$M()$并不是一个严格的概率分布（$M()$实际上是一个概率半测度）。</p> <p>我们可以证明，这个先验概率随着给定的字符串长度n的增加（也即推理前信息的增加），其与真实分布之间的差距，以比$\frac{1}{n}$更快的速度趋近于0。这个先验被称为<strong>通用先验概率</strong>。</p> <p>$K()$的名字有很多：柯尔莫哥洛夫复杂度，描述复杂度，柴廷常数……。但是最主流的称呼为柯尔莫哥洛夫复杂度（虽然这个概念最早实际上由所罗门诺夫提出，但是柯尔莫哥洛夫使其流行）。我们在此处简称其为柯氏复杂度。通俗的来讲，我们可以这样理解这个概念：我们宇宙中所有的字符串，都是由某些程序产生的，那么这些程序的长度，衡量了这些字符串的复杂度和信息量。</p> <p>例如，我们都见过芒德布洛特集在复平面上形成的美丽图案。</p> <p><img src="/assets/img/work/post-2024-01-08/image.png" alt="alt text" title="芒德布洛特集" class="img-fluid rounded"></p> <p>但是我们只需要使用$z:=z^2+c$这个简单的公式进行迭代即可得到这个集合。也就是说，这个公式代表了这个美丽集合的全部。所有芒德布洛特集中的元素都可以用基于这个公式写就的程序产生。我们说，这个程序的所组成的二进制代码串的长度（我们这里使用二进制串进行讨论，但是实际上不同语言下的同一字符串之间的柯氏复杂度可以视作不变，因此这并不影响讨论），就是整个芒德布洛特集组成的串的柯氏复杂度。</p> <p>接下来我们将看到，通过柯氏复杂度定义的<strong>通用先验分布</strong>是相当合理且优秀的。对于一个长度为n的二元字符串x，其产生的概率为$2^{-n}$，而其使用最短描述程序产生这个串的概率<strong>至少</strong>为$2^{-K(x)}$。如果x是有规律的，是可压缩的，那么$K(x) \ll n$，这时的x是由于某种简单的原因（如最短程序）计算出来的概率，这比随机产生的可能性大$2^{n-K(x)}$倍数。</p> <p>但是遗憾的是，$K()$是不可计算的，我们永远也不能直接利用通用先验分布进行计算。</p> <h2 id="所罗门诺夫归纳法与莱文通用搜索">所罗门诺夫归纳法与莱文通用搜索</h2> <p>尽管通用先验分布是不可计算的，我们依旧可以利用它在数学上做一些事情。</p> <p>利用通用先验分布和贝叶斯律，我们可以得到<strong>所罗门诺夫归纳法（SI）</strong>。围绕着SI，我们可以发展出一整套对信息的全新理论，这被称为算法信息论。</p> <p>SI发明的初衷是利用已知的n位字符串，来推测第n+1位字符串。那么，设字符串为x，下一个需要预测的字符为a，产生x的程序为$\mu()$，利用贝叶斯公式我们有：</p> \[M(xa|x)=\frac{M(xa)}{M(x)}\] <p>这个公式和通用先验一起，被统称为所罗门诺夫归纳法。尽管事先不知道真正的先验分布（即$P(x)$和$P(xa)$），但是我们可以证明，随着x长度的增加，$M(x)$和$M(xa)$以比$\frac{1}{n}$更快的速度趋近于真实分布。这告诉了我们一个惊人的事实，那就是在给定数据x的情况下，搜索其对应的最短的程序，等价于是在搜索数据x对应的真实分布！</p> <p>由于柯氏复杂度的不可计算性，整个SI都是不可计算的。但是用所罗门本人的话来说，这是一个“小小的代价”。实际上也确实如此，柯尔莫哥洛夫的学生莱文（Levin）根据SI设计了一个搜索算法，可以作为一种对SI的近似实现。这被称为<strong>莱文通用搜索</strong>（Levin`s Universal Algorithm）。</p> <p>这是一个极为复杂的算法，但是其大体思想是说：我们可以在n个并行的图灵机上进行程序搜索，并逐步依据搜索到的程序的长度进行改进，最终在有限时间内，我们可以得到一个接近SI的结果。</p> <p>尽管这个算法时间开销极大，难以在现实中实现。但是这依旧给了我们一个很好的启发，这让我们意识到SI并非是数学家的无用玩具，SI是可以以某种方式近似实现的。</p> <h2 id="compressionintelligence">Compression=Intelligence</h2> <p>SI理论最伟大的地方在于，我们可以从SI得出”<strong>compression=intelligence</strong>“这个极为有力的结论。</p> <p>SI告诉我们，寻找最短的程序，几乎等价于寻找真实分布。</p> <p>从这个角度来看，我们可以发现SI理论与数据压缩深度学习有着极为深厚的联系。</p> <p>首先，ANN实际上可以看作一台执行多步程序的多路并行的计算机（由Ilya提出，这个想法与莱文通用搜索不谋而合）。例如，一个50层的网络运行的过程就是同时也运行n个可以执行50步的程序，然后将这些程序的输出加权。优化网络的过程就是搜索程序的过程。</p> <p>随后，我们可以看到，当我们使用神经网路（如GPT）进行完形填空式的自监督学习的时候，我们实际上是在解决所罗门所预定义的问题，即对于一个字符串，预测其下一个是什么。结合上面所说的ANN是对SI的近似的结论。我们可以认为现代的各种LLM都是在尝试实现一个SI。</p> <p>而预测下一个token这种自监督学习的方法，确实使得GPT4这些模型产生了一部分智能。</p> <p>而数据压缩理论告诉我们：任何一个预测器，都有唯一的一个压缩器与其对应。因此，我们可以使用各种LLM作为一种<a href="https://www.youtube.com/watch?v=dO4TPJkeaaU&amp;ab_channel=StanfordMLSysSeminars" rel="external nofollow noopener" target="_blank">对数据的无损压缩</a>。这恰恰告诉我们，使用训练LLM的过程就是压缩数据的过程。</p> <p>因此，使用“compression=intelligence”这个公式来总结和说明LLM的智能从何而来这个问题，再合适不过了。</p> <h2 id="对泛化的解释">对泛化的解释</h2> <p>利用SI来解释神经网络最美妙的地方就在于，这种视角解释了神经网络为何会有如此强的泛化性能。</p> <p>实际上已经有很多了解算法信息理论的人，看到了神经网络与SI之间的关系。他们尝试使用算法信息论的方法去解释过参数化的神经网络为什么可以进行有效的泛化。</p> <p>现在有已经有许许多多的工作提出，神经网络之所以能在过参数的情况下泛化，其实就是因为其总是能在训练的过程中拟合到柯氏复杂度较低的函数，而这类函数正是最接近真实分布的一类函数，也是泛化性能最好的一类函数。可以说，神经网络的泛化难题完全可以通过算法信息论得到解释。</p> <h2 id="结语">结语</h2> <p>令人遗憾的是，雷·所罗门诺夫，这位伟大的思想家、AI领域的先驱，已经于2009年永远的离开了我们。人类利用概率论来实现AI的伟大探索，正是由他开始。而我也十分的确信，他深邃而超前的思维将永远伴随着我们，走到AGI追寻之路的末尾，帮助我们捧起AGI的圣杯。R.I.P. Ray。</p> <p><strong>Referring:</strong><br> <a href="https://raysolomonoff.com/" rel="external nofollow noopener" target="_blank">所罗门诺夫的个人网站</a> <br> <a href="https://en.wikipedia.org/wiki/Solomonoff%27s_theory_of_inductive_inference" rel="external nofollow noopener" target="_blank">所罗门诺夫的归纳推理理论</a><br> <a href="https://en.wikipedia.org/wiki/Algorithmic_probability#Overview" rel="external nofollow noopener" target="_blank">算法概率</a><br> <a href="https://en.wikipedia.org/wiki/Kolmogorov_complexity" rel="external nofollow noopener" target="_blank">柯尔莫哥洛夫复杂度</a><br> <a href="https://zhuanlan.zhihu.com/p/425376986" rel="external nofollow noopener" target="_blank">译作——老师柯尔莫哥洛夫的生平和工作（9）：1960年代之算法信息论，算法概率论，柯尔莫哥洛夫复杂度（Kolmogorov complexity）</a><br> <a href="https://steemit.com/steemstem/@markgritter/leonid-levin-s-universal-algorithm" rel="external nofollow noopener" target="_blank">莱文通用搜索</a><br> <a href="http://www.scholarpedia.org/article/Universal_search" rel="external nofollow noopener" target="_blank">通用搜索</a></p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Rao Fu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-thought",
+          title: "Thought",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/thoughts/";
+          },
+        },{id: "nav-project",
+          title: "Project",
+          description: "Displaying my works, interests and projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "projects-randmaker",
+          title: 'Randmaker',
+          description: "This is a random number generator.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_randmaker/";
+            },},{id: "projects-my-personal-website",
+          title: 'My personal website',
+          description: "This is the source code of my personal website.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_personal_website/";
+            },},{id: "thoughts-thinking-abort-generalization",
+          title: 'Thinking Abort Generalization',
+          description: "关于泛化的一些思考",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/thinking-abort-generalization/";
+            },},{id: "thoughts-pac-and-dl",
+          title: 'PAC and DL',
+          description: "PAC与深度学习",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/PAC-and-DL/";
+            },},{id: "thoughts-chi2-squared-test",
+          title: 'Chi2 Squared Test',
+          description: "卡方检验",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/chi2-squared-test/";
+            },},{id: "thoughts-world-model-theory",
+          title: 'World Model Theory',
+          description: "世界模型的理论",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/world-model-theory/";
+            },},{id: "thoughts-solomonoff-kolmogorov-and-levin-with-induction-compression-and-search",
+          title: 'Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search',
+          description: "所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/Solomonoff-Kolmogorov_and_Levin_with_Compression-Prediction_and_Search/";
+            },},{id: "thoughts-how-to-design-a-dl-algorithm",
+          title: 'How to Design a DL Algorithm',
+          description: "",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/how-to-design-a-DL-algorithm/";
+            },},{id: "thoughts-thinking-about-robot",
+          title: 'Thinking about robot',
+          description: "机器人迷思",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/thinking-about-robot/";
+            },},{id: "thoughts-carpenter-and-ironsmith",
+          title: 'Carpenter and Ironsmith',
+          description: "木匠与铁匠",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2025/carpenter-and-ironsmith/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%66%75%72%75%66%31%35@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/FuRuF-11", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

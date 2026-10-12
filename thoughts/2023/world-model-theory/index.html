@@ -1,0 +1,138 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> World Model Theory | FR </title> <meta name="author" content="Rao Fu"> <meta name="description" content="世界模型的理论"> <meta name="keywords" content="NLP, reinforcement learning, algorithmic information theory, deep learning"> <meta property="og:site_name" content="FR"> <meta property="og:type" content="website"> <meta property="og:title" content="FR | World Model Theory"> <meta property="og:url" content="https://furuf-11.github.io/thoughts/2023/world-model-theory/"> <meta property="og:description" content="世界模型的理论"> <meta property="og:image" content="https://furuf-11.github.io/assets/img/profile-pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="World Model Theory"> <meta name="twitter:description" content="世界模型的理论"> <meta name="twitter:image" content="https://furuf-11.github.io/assets/img/profile-pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.ico?v=4e2b6ea1ed8c844e136bce1163bffde9"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://furuf-11.github.io/thoughts/2023/world-model-theory/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> FR </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/thoughts/">Thought <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Project </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">World Model Theory</h1> <p class="post-meta"> Created on November 22, 2023 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2023 </p> </header> <article class="post-content"> <div id="markdown-content"> <p>一直以来，一个问题困扰着我和许多的AI研究者，那就是：“Is learning necessary?”。更具体一点，我们可以这样表述这个问题：要实现AGI，基于概率的机器学习和深度学习真的是必须的吗？我们能通过ML和DL实现真正的智能吗？</p> <p>对于这个问题，受到世界模型理论的启发和LLM在近年来出众表现的激励，经过长久的思考，我得到了一个答案：AGI是可以通过我们现有的基于概率的模型来实现的。</p> <p>首先是LLM的这类自回归语言模型的成功。我们可以看到LLM是具有相当的语言理解能力的，这可以归功于其是在大规模语料数据集上做过预训练。但是让人惊讶的是，他们似乎同样对这个世界有一些了解（GPT4可以理解位置关系、LLM可以使用API作为工具）。当我了解到这一点时，我感到非常的迷惑。训练是在自然语言构成的数据集上进行的，那么LLM的假设集应当是语义空间（对人类有意义的语句和词汇之间的映射关系的集合）的子集。但是事实并非如此，LLM学习到了部分真实世界的运作规律（同时我认为这才是其泛化能力来源的关键）。虽然仅仅是部分的不完全的规律，但是这仍然这远远超出了语义空间的范畴。LLM在语句上做训练，那么理论上它应当只会学习到词语之间的对应关系。但是LLM从这些数据中总结出了一部分世界的运行规律。这正说明了我们的语言在某种程度上是一种对世界的运行规律的客观总结。更学术的说法是，语言是我们脑中的世界模型运行的结果。</p> <p>世界模型的理论（最初由Jürgen Schmidhuber提出，但是LeCun这几年在这方面的进展较多）可以对在LLM中的这些奇怪的情况做出相当合理的解释。世界模型理论认为：我们的大脑针对我们所观察到的现实世界总结了一个世界模型，当我们基于我们的记忆和直觉做出各种推理和预测时，我们实际上是在使用我们的世界模型进行搜索和外推。从这个角度来看，甚至可以说我们的意识运行在我们各自的世界模型上。对世界模型的一个更数学一点的解释是，一个关于真实世界运行规律的分布的拟合。</p> <p>套用世界模型的理论来解释上面给出的例子，我们的可以说由于语言是世界模型运行得到的一个结果，所以每次仅能反应一部分我们脑中的世界模型中的信息，而LLM又从我们的语言中学习到了这一部分世界模型。又因为LLM仅学习到了我们部分的世界模型，所以仅能在某些特定情况下做的很好（如改写，辨别方位，理解简单的逻辑顺序），而在另一些事情上做得很差（如A is B,B is A问题）。LLM并不能完全正确的反应我们自己的世界模型，更难以直接反应真实世界的运行规律。但是从这个角度来讲，假如我们的模型产生了一个完整的世界模型，我们就真的得到AGI了。</p> <p><img src="/assets/img/work/post-2023-11-22/1.png" alt="现实世界与世界模型与语言" title="World Moddl" class="img-fluid rounded"></p> <p>因此我认为，既然LLM是从语言上采样并学习即可得到了一部分我们的世界模型，那我们何不直接在真实世界中采样来使得我们的模型获得自己的世界模型？在语料上训练得到的世界模型只能是人类世界模型的子集，要使得模型得到一个和人类同等规模或者超远人类的世界模型，我们必须让我们的模型在整个真实世界中采样。</p> <p>此时的模型已经不是在单纯在语言上进行训练，而是要在各种模态的信息上进行训练（我认为这似乎是GPT4-V的强大能力的根源）。如果我们能够使得我们的模型足够大且我们对真实世界做了足够多有效的采样（感谢大数定律，可以保证此时采样得到的数据反应了真实的世界的规律），那么从LLM仅在语料上训练就可以得到少部分世界模型这一点来看，只要有合理的训练方法（目前缺少这些方法），那么毫无疑问的，我们就可以使得我们的模型产生世界模型，可以使得AGI真正的出现。而我认为在当今的AI研究人员的努力下，训练、数据和模型架构上的难题都将迅速的得到解决。</p> <p>所以毫无疑问的，AGI将很快就会出现。</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Rao Fu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-thought",
+          title: "Thought",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/thoughts/";
+          },
+        },{id: "nav-project",
+          title: "Project",
+          description: "Displaying my works, interests and projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "projects-randmaker",
+          title: 'Randmaker',
+          description: "This is a random number generator.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_randmaker/";
+            },},{id: "projects-my-personal-website",
+          title: 'My personal website',
+          description: "This is the source code of my personal website.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_personal_website/";
+            },},{id: "thoughts-thinking-abort-generalization",
+          title: 'Thinking Abort Generalization',
+          description: "关于泛化的一些思考",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/thinking-abort-generalization/";
+            },},{id: "thoughts-pac-and-dl",
+          title: 'PAC and DL',
+          description: "PAC与深度学习",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/PAC-and-DL/";
+            },},{id: "thoughts-chi2-squared-test",
+          title: 'Chi2 Squared Test',
+          description: "卡方检验",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/chi2-squared-test/";
+            },},{id: "thoughts-world-model-theory",
+          title: 'World Model Theory',
+          description: "世界模型的理论",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/world-model-theory/";
+            },},{id: "thoughts-solomonoff-kolmogorov-and-levin-with-induction-compression-and-search",
+          title: 'Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search',
+          description: "所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/Solomonoff-Kolmogorov_and_Levin_with_Compression-Prediction_and_Search/";
+            },},{id: "thoughts-how-to-design-a-dl-algorithm",
+          title: 'How to Design a DL Algorithm',
+          description: "",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/how-to-design-a-DL-algorithm/";
+            },},{id: "thoughts-thinking-about-robot",
+          title: 'Thinking about robot',
+          description: "机器人迷思",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/thinking-about-robot/";
+            },},{id: "thoughts-carpenter-and-ironsmith",
+          title: 'Carpenter and Ironsmith',
+          description: "木匠与铁匠",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2025/carpenter-and-ironsmith/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%66%75%72%75%66%31%35@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/FuRuF-11", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Chi2 Squared Test | FR </title> <meta name="author" content="Rao Fu"> <meta name="description" content="卡方检验"> <meta name="keywords" content="NLP, reinforcement learning, algorithmic information theory, deep learning"> <meta property="og:site_name" content="FR"> <meta property="og:type" content="website"> <meta property="og:title" content="FR | Chi2 Squared Test"> <meta property="og:url" content="https://furuf-11.github.io/thoughts/2023/chi2-squared-test/"> <meta property="og:description" content="卡方检验"> <meta property="og:image" content="https://furuf-11.github.io/assets/img/profile-pic.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Chi2 Squared Test"> <meta name="twitter:description" content="卡方检验"> <meta name="twitter:image" content="https://furuf-11.github.io/assets/img/profile-pic.jpg"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.ico?v=4e2b6ea1ed8c844e136bce1163bffde9"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://furuf-11.github.io/thoughts/2023/chi2-squared-test/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> FR </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/thoughts/">Thought <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Project </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Chi2 Squared Test</h1> <p class="post-meta"> Created on November 11, 2023 </p> <p class="post-tags"> <i class="fa-solid fa-calendar fa-sm"></i> 2023 </p> </header> <article class="post-content"> <div id="markdown-content"> <p>卡方检验是一种用于检验总体的分布和我们预想的分布之间是否一致的假设检验方法。卡方检验使用$\chi^{2}$分布进行检验，是一种非参数假设检验方法。</p> <p>设待检验的总体的分布函数为$F(X)$，$F_0(X)$为已知分布函数，则卡方检验的零假设和备择假设分别为</p> \[\begin{aligned} H_0 &amp;: F(X)=F_0(X) \\ H_1 &amp;: F(X)\not=F_0(X) \end{aligned}\] <p>卡方检验最适用于离散变量的检验，对于连续型随机变量，可以将数轴划分为多段来进行检验。我们首先需要计算$\chi^2$统计量（其中$n_i$为第i类的值被称为<strong>实际频数</strong>，$E(n_i)$为理论上的期望值也称<strong>理论频数</strong>）</p> \[\chi^{2}=\sum_{i=1}^{k}\frac{(n_i-E(n_i))^2}{E(n_i)}\] <p>计算得到$\chi^{2}$统计量后，第二步是计算对应卡方分布自由度，第三步则是根据拒绝域和自由度来<strong>查表</strong>并与上面得到的卡方统计量进行比较，并根据比赛的结果来判断是否拒绝原假设。</p> <p>卡方检验的基本上来讲有两种用法：</p> <ul> <li>拟合优度检验：看实际数据的分布与理论分布的区别</li> <li>独立性检验：看A与B两个变量之间是否独立</li> </ul> <p>对于这两种情况，我们都需要将原数据分为不相交的K类。尤其是对于第二类用法，我们实际上常将其用于检测变量和输出是否独立。</p> <p>第一种情况是容易说明和理解的，我们计算$\chi^2$统计量时，如果两个分布是接近的，那么实际频数和理论频数就会很接近，那么这个统计量值就会较小。第一种情况下，卡方分布自由度为K-1且由于此时我们有一个假设的理论分布（如假设原分布为泊松分布），$E(n_i)$是不难计算的。</p> <p>第二种情况则需要我们建立一个列联表，假设A有R种取值，B有C种取值，总共有N个样本。那么我们可以用一个如下的2x2列联表来举例：</p> <div style="margin: 0 auto; display: table;"> <table> <tr> <td></td> <td>$c_1$</td> <td>$c_2$</td> <td>$R_{all}$</td> </tr> <tr> <td>$r_1$</td> <td>$O_{1,1}$</td> <td>$O_{1,2}$</td> <td>$O_{1,}$</td> </tr> <tr> <td>$r_2$</td> <td>$O_{2,1}$</td> <td>$O_{2,2}$</td> <td>$O_{2,}$</td> </tr> <tr> <td>$C_{all}$</td> <td>$O_{,1}$</td> <td>$O_{,2}$</td> <td>N</td> </tr> </table> </div> <p>此时的卡方统计量公式为：</p> \[\chi^2=\sum^{R}_{r=1}\sum^{C}_{c=1}\frac{(O_{r,c}-E(O_{r,c}))^2}{E(O_{r,c})}\] <p>其中</p> \[E(O_{r,c})=N*E(O_{,c})*E(O_{r,})=\frac{ O_{,c}*O_{r,} }{N}\] <p>这里可以直接利用期望的性质展开，是由于我们是进行独立性假设的检验，所以我们的理论频数是直接按照独立来计算的。此时，我们的卡方分布的自由度为$(R-1)*(C-1)$。</p> <p>若要计算多个变量与B是否独立，则需要建立多个列联表来进行分别计算。</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Rao Fu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-thought",
+          title: "Thought",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/thoughts/";
+          },
+        },{id: "nav-project",
+          title: "Project",
+          description: "Displaying my works, interests and projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "projects-randmaker",
+          title: 'Randmaker',
+          description: "This is a random number generator.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_randmaker/";
+            },},{id: "projects-my-personal-website",
+          title: 'My personal website',
+          description: "This is the source code of my personal website.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_personal_website/";
+            },},{id: "thoughts-thinking-abort-generalization",
+          title: 'Thinking Abort Generalization',
+          description: "关于泛化的一些思考",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/thinking-abort-generalization/";
+            },},{id: "thoughts-pac-and-dl",
+          title: 'PAC and DL',
+          description: "PAC与深度学习",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/PAC-and-DL/";
+            },},{id: "thoughts-chi2-squared-test",
+          title: 'Chi2 Squared Test',
+          description: "卡方检验",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/chi2-squared-test/";
+            },},{id: "thoughts-world-model-theory",
+          title: 'World Model Theory',
+          description: "世界模型的理论",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2023/world-model-theory/";
+            },},{id: "thoughts-solomonoff-kolmogorov-and-levin-with-induction-compression-and-search",
+          title: 'Solomonoff, Kolmogorov and Levin with Induction, Compression, and Search',
+          description: "所罗门诺夫、柯尔莫哥洛夫和莱文与归纳、压缩和搜索",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/Solomonoff-Kolmogorov_and_Levin_with_Compression-Prediction_and_Search/";
+            },},{id: "thoughts-how-to-design-a-dl-algorithm",
+          title: 'How to Design a DL Algorithm',
+          description: "",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/how-to-design-a-DL-algorithm/";
+            },},{id: "thoughts-thinking-about-robot",
+          title: 'Thinking about robot',
+          description: "机器人迷思",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2024/thinking-about-robot/";
+            },},{id: "thoughts-carpenter-and-ironsmith",
+          title: 'Carpenter and Ironsmith',
+          description: "木匠与铁匠",
+          section: "Thoughts",handler: () => {
+              window.location.href = "/thoughts/2025/carpenter-and-ironsmith/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%66%75%72%75%66%31%35@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/FuRuF-11", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

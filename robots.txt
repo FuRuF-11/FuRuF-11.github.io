@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://furuf-11.github.io/sitemap.xml
